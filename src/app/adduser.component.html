@@ -1,5 +1,6 @@
 <div class="card">
     <div class="card-body">
+        <h3 style="margin-bottom: 10px">Add User</h3>
         <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
             <div class="mb-3">
                 <label class="form-label">User Type</label>
@@ -26,11 +27,8 @@
             <div>
                 <button [disabled]="loading" class="btn btn-primary">
                     <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
-                    Register
+                    Add
                 </button>
-                <button [disabled]="loading" class="btn btn-primary">
-                <a routerLink="../login" style="text-decoration:none; color:white;">Cancel</a>
-            </button>
             </div>
         </form>
     </div>

@@ -1,14 +1,15 @@
+
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-adduser',
+  templateUrl: './adduser.component.html',
+  styleUrls: ['./adduser.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class AdduserComponent implements OnInit {
   form!: FormGroup;
   loading = false;
   submitted = false;
@@ -28,9 +29,10 @@ export class RegisterComponent implements OnInit {
       });
   }
   onSubmit(value: any){
-    this.http.post(`http://localhost:8080`, value).subscribe(v=>console.log(v));
+    this.http.post(`http://localhost:3000/posts`, value);
     console.log(value);
     this.router.navigate(['login'])
   }
 
 }
+

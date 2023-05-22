@@ -1,0 +1,15 @@
+.btn-primary {
+    color: white;
+    background: red;
+    float: right;
+}
+
+.btn {
+    color: white;
+    background: red;
+    padding: 0.75rem;
+    font-weight: 600;
+    margin-right: 20px;
+    border-radius: 5px;
+    float: right;
+}
