@@ -27,7 +27,7 @@ ngOnInit() {
   
 }
 onSubmit() {
-  this.http.get<any>("http://localhost:8080/")
+  this.http.get<any>("http://localhost:8080/NewDB")
   .subscribe((res:any)=>{
      console.log(res);
     // const user = res.find((a:any)=>{

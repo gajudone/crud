@@ -33,10 +33,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // simple route
-app.get("/", (req, res) => {
-  res.json(val.then(v=>{
-    console.log(v);
-  }));
+app.get("/NewDB", (req, res) => {
+  res.json('fjdfkd');
 });
 const monmodel = db.mongoose.model("col", {
   userType: String,
@@ -44,7 +42,7 @@ const monmodel = db.mongoose.model("col", {
       username: String
 });
 app.post("/", (req, res) => {
-    //res.json({ message: "Welcome to bezkoder applications." });
+    res.json({ message: "Welcome to bezkoder applications." });
     console.log("inside post");
     const data = new monmodel({
       userType: req.body.userType,
