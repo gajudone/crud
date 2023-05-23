@@ -3,7 +3,7 @@ const Tutorial = db.tutorials;
 
 // Create and Save a new Tutorial
 exports.create = (req, res) => {
-  
+  console.log('ttt');
 };
 
 // Retrieve all Tutorials from the database.
