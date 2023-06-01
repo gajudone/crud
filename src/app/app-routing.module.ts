@@ -5,13 +5,14 @@ import { RegisterComponent } from './register.component';
 import { DashboardComponent } from './dashboard.component';
 import { UsersComponent } from './users.component';
 import { AdduserComponent } from './adduser.component';
+import { authGuard } from './auth.guard'
 
 const routes: Routes = [
-  {path: '', component: LoginComponent},
-  {path: 'login', component: LoginComponent},
+  {path: '', component: LoginComponent, canActivate: [authGuard]},
+  {path: 'login', component: LoginComponent, canActivate: [authGuard]},
   {path: 'register', component: RegisterComponent},
   { path: 'users', component: AdduserComponent },
-  {path: 'dashboard', component: DashboardComponent, children: [
+  {path: 'dashboard', component: DashboardComponent, canActivate: [authGuard], children: [
     { path: '', component: UsersComponent },
     { path: 'specs', component: LoginComponent }
   ]}
