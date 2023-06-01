@@ -33,8 +33,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // simple route
-app.get("/NewDB", (req, res) => {
-  res.json('fjdfkd');
+app.get("/NewDB", async (req, res) => {
+  const allUsers = await monmodel.find()
+  res.status(200).send(allUsers)
+  // monmodel.find({}, (err,val)=>{
+  //   if(err){
+  //     console.log(err);
+  //   } else {
+  //     res.json(val);
+  //   }
+  // })
 });
 const monmodel = db.mongoose.model("col", {
   userType: String,

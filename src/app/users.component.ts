@@ -20,9 +20,11 @@ export class UsersComponent {
   ) { }
 
     ngOnInit() {
-        this.http.get(`https://jsonplaceholder.typicode.com/posts`)
+        this.http.get(`http://localhost:8080/NewDB`)
             .pipe(first())
-            .subscribe(users => this.users = users);
+            .subscribe(users => {this.users = users
+              console.log(users);
+            });
     }
 
     deleteUser(id: string) {

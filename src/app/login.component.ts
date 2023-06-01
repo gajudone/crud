@@ -26,15 +26,19 @@ ngOnInit() {
 
   
 }
-onSubmit() {
+onSubmit(value:any) {
+  console.log(value);
+  
   this.http.get<any>("http://localhost:8080/NewDB")
   .subscribe((res:any)=>{
      console.log(res);
-    // const user = res.find((a:any)=>{
-    //   return a.lastName === username && a.password === password
+    const user = res.find((a:any)=>{
+      if(a.username === value.username && a.password === value.password) {
+        this.router.navigate(['dashboard']);
+        localStorage.setItem("token", "abc");
+      }
     });
-    this.router.navigate(['dashboard'])
-
-}
+    
+})}
 
 }
