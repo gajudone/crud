@@ -6,16 +6,18 @@ import { DashboardComponent } from './dashboard.component';
 import { UsersComponent } from './users.component';
 import { AdduserComponent } from './adduser.component';
 import { authGuard } from './auth.guard'
+import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
-  {path: '', component: LoginComponent, canActivate: [authGuard]},
-  {path: 'login', component: LoginComponent, canActivate: [authGuard]},
+  {path: '', component: LoginComponent, },
+  {path: 'login', component: LoginComponent, },
   {path: 'register', component: RegisterComponent},
   { path: 'users', component: AdduserComponent },
-  {path: 'dashboard', component: DashboardComponent, canActivate: [authGuard], children: [
+  {path: 'dashboard', component: DashboardComponent, children: [
     { path: '', component: UsersComponent },
     { path: 'specs', component: LoginComponent }
-  ]}
+  ]},
+  { path: 'edit', component: EditComponent },
 ];
 
 @NgModule({

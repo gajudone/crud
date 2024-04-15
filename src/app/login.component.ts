@@ -33,8 +33,9 @@ onSubmit(value:any) {
   .subscribe((res:any)=>{
      console.log(res);
     const user = res.find((a:any)=>{
-      if(a.username === value.username && a.password === value.password) {
-        this.router.navigate(['dashboard']);
+      if(a.name === value.name && a.password === value.password) {
+        console.log(res)
+        this.router.navigate(['users']);
         localStorage.setItem("token", "abc");
       }
     });

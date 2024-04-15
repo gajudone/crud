@@ -1,5 +1,6 @@
 const express = require("express");
 //app.use(...);
+var allUsers = [];
 
 var mongoose = require('mongoose');
 
@@ -34,7 +35,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // simple route
 app.get("/NewDB", async (req, res) => {
-  const allUsers = await monmodel.find()
+  allUsers = await monmodel.find()
   res.status(200).send(allUsers)
   // monmodel.find({}, (err,val)=>{
   //   if(err){
@@ -45,7 +46,7 @@ app.get("/NewDB", async (req, res) => {
   // })
 });
 const monmodel = db.mongoose.model("col", {
-  userType: String,
+      userType: String,
       password: String,
       username: String
 });
@@ -57,15 +58,48 @@ app.post("/", (req, res) => {
       password: req.body.password,
       username: req.body.username
     })
-    const val = data.save();
-   // console.log(val);
+    var val = data.save();
+    console.log(val);
     res.json(val.then(v=>{
       console.log(v);
     }));
   });
 
+  app.put('/NewDB/:id', async (req, res) => {
+    allUsers = await monmodel.findByIdAndUpdate(req.body.id, { userType: req.body.userType, password: req.body.password, username: req.body.username});
+    // console.log(allUsers.length);
+     const id = req.params.id;
+     const body = req.body;
+     console.log(id);
+     console.log(body);
+    // const projectIndex = allUsers.findIndex(p =>{ return p._id.toString() == id.id;} );
+    // console.log(projectIndex);
+
+    // allUsers.splice(projectIndex, 1);
+    // console.log(allUsers.length);
+    //  allUsers = allUsers;
+    //await monmodel.deleteOne({ _id: id.id });
+
+    return res.send();
+  });
+
+  app.delete("/NewDB/:id", async (req, res) => {
+    allUsers = await monmodel.find();
+    // console.log(allUsers.length);
+     const id = req.params;
+    // const projectIndex = allUsers.findIndex(p =>{ return p._id.toString() == id.id;} );
+    // console.log(projectIndex);
+
+    // allUsers.splice(projectIndex, 1);
+    // console.log(allUsers.length);
+    //  allUsers = allUsers;
+    await monmodel.deleteOne({ _id: id.id });
+
+    return res.send();
+  });
+
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}.`);
+  console.log(`Server is running on ports ${PORT}.`);
 });
