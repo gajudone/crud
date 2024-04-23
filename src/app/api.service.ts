@@ -7,9 +7,10 @@ import { Router } from '@angular/router';
 })
 export class ApiService {
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(public http: HttpClient, public router: Router) { }
   
   useHttp(){
+    console.log('vbvbvbb');
     this.router.navigate(['login']);
   }
 }

@@ -32,6 +32,7 @@ export class AdduserComponent implements OnInit {
     this.http.post(`http://localhost:3000/posts`, value);
     console.log(value);
     this.router.navigate(['login'])
+    this.loading = true;
   }
 
 }
