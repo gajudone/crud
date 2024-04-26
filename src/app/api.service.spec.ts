@@ -35,6 +35,10 @@ describe('ApiService', () => {
     expect(service.router).toBeDefined();
   });
 
+   it('should inject Router', () => {
+    expect(service.router).toBeDefined();
+  });
+
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
