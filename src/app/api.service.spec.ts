@@ -28,10 +28,16 @@ describe('ApiService', () => {
   });
 
   it('should inject HttpClient', () => {
+    console.log('from master');
+    console.log('from expresschanges');
     expect(service.http).toBeDefined();
   });
 
   it('should inject Router', () => {
+    expect(service.router).toBeDefined();
+  });
+
+   it('should inject Router', () => {
     expect(service.router).toBeDefined();
   });
 
