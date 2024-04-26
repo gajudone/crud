@@ -10,7 +10,8 @@ export class ApiService {
   constructor(public http: HttpClient, public router: Router) { }
   
   useHttp(){
-    console.log('abc')
+    console.log('abc');
+    console.log('from master');
     this.router.navigate(['login']);
   }
 }
