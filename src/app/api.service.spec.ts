@@ -28,6 +28,7 @@ describe('ApiService', () => {
   });
 
   it('should inject HttpClient', () => {
+    console.log('from master');
     expect(service.http).toBeDefined();
   });
 
