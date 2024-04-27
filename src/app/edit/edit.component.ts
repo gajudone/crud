@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ConsoleReporter } from 'jasmine';
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
@@ -16,6 +17,7 @@ export class EditComponent implements OnInit {
     // private http: HttpClient,
 ) { }
   ngOnInit() {
+    console.log('master1');
     this.form = this.formBuilder.group({
         userType: ['', Validators.required],
         username: ['', Validators.required],
