@@ -34,6 +34,7 @@ describe('ApiService', () => {
   });
 
   it('should inject Router', () => {
+    console.log('master1');
     expect(service.router).toBeDefined();
   });
 
