@@ -17,7 +17,7 @@ export class EditComponent implements OnInit {
     // private http: HttpClient,
 ) { }
   ngOnInit() {
-    console.log('master1');
+    console.log('master');
     this.form = this.formBuilder.group({
         userType: ['', Validators.required],
         username: ['', Validators.required],
