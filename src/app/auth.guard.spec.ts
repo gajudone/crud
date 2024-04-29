@@ -65,7 +65,7 @@ describe('authGuard', () => {
     // Act
     executeGuard(activatedRouteSnapshot, routerStateSnapshot);
 
-    //   treertrt
+    
     expect(window.alert).toHaveBeenCalledWith('not logged');
   });
 
