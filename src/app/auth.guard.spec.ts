@@ -70,7 +70,7 @@ describe('authGuard', () => {
   });
 
   it('should show alert with "not logged" if token does not exist', () => {
-    // Arrange
+    console.log('added console');
     spyOn(localStorage, 'getItem').and.returnValue(null);
     spyOn(window, 'alert');
     const activatedRouteSnapshot = {} as ActivatedRouteSnapshot;
