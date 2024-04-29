@@ -16,7 +16,7 @@ describe('authGuard', () => {
   });
 
   it('should return true if token exists in localStorage', () => {
-    // Arrange
+  
     spyOn(localStorage, 'getItem').and.returnValue('someToken');
     const activatedRouteSnapshot = {} as ActivatedRouteSnapshot;
     const routerStateSnapshot = {} as RouterStateSnapshot;
