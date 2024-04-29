@@ -21,7 +21,7 @@ describe('authGuard', () => {
     const activatedRouteSnapshot = {} as ActivatedRouteSnapshot;
     const routerStateSnapshot = {} as RouterStateSnapshot;
 
-    // Act
+    // Ac
     const result = executeGuard(activatedRouteSnapshot, routerStateSnapshot);
 
     // Assert
