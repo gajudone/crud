@@ -81,5 +81,10 @@ describe('authGuard', () => {
 
     // Assert
     expect(window.alert).toHaveBeenCalledWith('not logged');
+
+    // Assert
+    expect(window.alert).toHaveBeenCalledWith('not logged');
   });
+
+  
 });
