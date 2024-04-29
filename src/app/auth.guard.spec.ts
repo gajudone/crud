@@ -55,8 +55,22 @@ describe('authGuard', () => {
     expect(window.alert).toHaveBeenCalledWith('ter');
   });
 
-  it('should show alert with "not logged" if token does not exist', () => {
+  it('newly added', () => {
     // Arrange
+    spyOn(localStorage, 'getItem').and.returnValue(null);
+    spyOn(window, 'alert');
+    const activatedRouteSnapshot = {} as ActivatedRouteSnapshot;
+    const routerStateSnapshot = {} as RouterStateSnapshot;
+
+    // Act
+    executeGuard(activatedRouteSnapshot, routerStateSnapshot);
+
+    
+    expect(window.alert).toHaveBeenCalledWith('not logged');
+  });
+
+  it('should show alert with "not logged" if token does not exist', () => {
+    console.log('added console');
     spyOn(localStorage, 'getItem').and.returnValue(null);
     spyOn(window, 'alert');
     const activatedRouteSnapshot = {} as ActivatedRouteSnapshot;
@@ -67,5 +81,10 @@ describe('authGuard', () => {
 
     // Assert
     expect(window.alert).toHaveBeenCalledWith('not logged');
+
+    // Assert
+    expect(window.alert).toHaveBeenCalledWith('not logged');
   });
+
+  
 });
