@@ -65,7 +65,7 @@ describe('authGuard', () => {
     // Act
     executeGuard(activatedRouteSnapshot, routerStateSnapshot);
 
-    // Assert dsada
+    //  dsada
     expect(window.alert).toHaveBeenCalledWith('not logged');
   });
 
